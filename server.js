@@ -1,9 +1,9 @@
 'use strict'
 
-const bodyParser = require('body-parser')
+const {json} = require('body-parser')
 const express = require('express')
 const mongoose = require('mongoose')
-const {connect} = require('./db/database')
+const { connect } = require('./db/database')
 const routes = require('./routes/index')
 
 const app = express()
@@ -16,14 +16,16 @@ const user = require('./models/user')
 
 //middlewares
 app.use(express.static('client'))
+// app.use(bodyParser.urlencoded({ extended: false }))
+app.use(json())
 
 //routes
 app.use(routes)
 
 connect()
-	.then((req, res) => {
-		app.listen(port, () => {
-		console.log(`listening on ${port}`);
-	})
-})
-.catch(console.error)
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`listening on ${port}`);
+    })
+  })
+  .catch(console.error)
