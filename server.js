@@ -22,8 +22,8 @@ app.use(routes)
 
 connect()
 	.then((req, res) => {
-	app.listen(port, () => {
-	console.log(`listening on ${port}`);
-})
+		app.listen(port, () => {
+		console.log(`listening on ${port}`);
+	})
 })
 .catch(console.error)
