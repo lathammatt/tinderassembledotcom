@@ -9,8 +9,11 @@ router.get('/register', (req, res) => {
 	res.send('register')
 })
 
-router.post('/register', (req, res) => {
-	//code
+router.post('/register', (req, res, err) => {
+	User
+		.create(req.body)
+		.then(user => res.json(user))
+		.catch(err)
 })
 
 module.exports = router
