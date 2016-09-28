@@ -14,6 +14,14 @@ app.config(function($routeProvider) {
       templateUrl: './partials/register.html',
       controller: 'RegisterCtrl'
     })
+    .when('/profile', {
+      templateUrl: './partials/profile.html',
+      controller: 'ProfileCtrl'
+    })
+    .when('/search', {
+      templateUrl: './partials/search.html',
+      controller: 'SearchCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     })
