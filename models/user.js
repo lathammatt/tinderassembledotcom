@@ -23,7 +23,7 @@ module.exports = mongoose.model('User', {
   },
   gender: String,
   birthday: String,
-  orienation: String,
+  orientation: String,
   universe: String,
   height: String,
   weight: String,
