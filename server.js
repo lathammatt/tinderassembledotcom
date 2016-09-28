@@ -4,9 +4,10 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const mongoose = require('mongoose')
 const {connect} = require('./db/database')
+const routes = require('./routes/index')
 
 const app = express()
-const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/tinderassemble'
+
 const port = process.env.PORT || 3000
 app.set('port', port)
 
@@ -17,6 +18,7 @@ const user = require('./models/user')
 app.use(express.static('client'))
 
 //routes
+app.use(routes)
 
 connect()
 	.then((req, res) => {

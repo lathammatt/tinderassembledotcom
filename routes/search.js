@@ -8,3 +8,5 @@ router.get('/search', (req, res) => {
   res.send('/search')
 })
 
+module.exports = router
+
