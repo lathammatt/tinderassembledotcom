@@ -1,0 +1,35 @@
+<form ng-submit="search(searchParams)">
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" class="form-control" ng-model="searchParams.name" placeholder="i.e. Drax the Destroyer" />
+	</div>
+	<div class="form-group">
+		<label for="gender">Gender</label>
+		<select ng-model="searchParams.gender">
+			<option value="other">other</option>
+			<option value="male">male</option>
+			<option value="female">female</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label class="checkbox-inline">
+		  <input type="checkbox" id="inlineCheckbox1" value="marvel" ng-model="searchParams.marvel"> Marvel
+		</label>
+		<label class="checkbox-inline">
+		  <input type="checkbox" id="inlineCheckbox2" value="dc" ng-model="searchParams.dc"> DC
+		</label>
+		<label class="checkbox-inline">
+		  <input type="checkbox" id="inlineCheckbox3" value="image" ng-model="searchParams.image"> Image
+		</label>
+	</div>
+	<div class="form-group">
+		<label for="orienation">Orientation</label>
+		<select ng-model="searchParams.orientation" multiple>
+			<option value="hero">Hero</option>
+			<option value="villain">Villain</option>
+			<option value="neutral">neutral</option>
+		</select>
+	</div>
+
+	<button type="submit">Submit</button>
+</form>
