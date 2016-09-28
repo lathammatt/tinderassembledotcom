@@ -8,16 +8,16 @@ const router = Router()
 
 router.get('/profile', (req, res) => {
   User
-		.find()
-    .then(user => res.json(user)
-      .catch(err)
-    }))
+    .find()
+    .then(user => res.json(user))
+    .catch(err)
+})
 
 router.post('/profile/:id', (req, res, err) => {
   User
     .create(req.body)
-    .then(user => res.json(user)
-      .catch(err)
-    }))
+    .then(user => res.json(user))
+    .catch(err)
+})
 
 module.exports = router
