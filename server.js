@@ -1,6 +1,6 @@
 'use strict'
 
-const {json} = require('body-parser')
+const { json } = require('body-parser')
 const express = require('express')
 const mongoose = require('mongoose')
 const { connect } = require('./db/database')
