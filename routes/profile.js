@@ -12,9 +12,11 @@ router.get('/profile', (req, res) => {
     .then(user => res.json(user))
 })
 
-router.post('/profile/:id', (req, res, err) => {
+router.patch('/profile', (req, res, err) => {
+  let postID = req.body._id
+  let body = req.body
   User
-    .create(req.body)
+    .update({_id: postID}, body)
     .then(user => res.json(user))
 })
 
