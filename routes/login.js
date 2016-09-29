@@ -24,15 +24,15 @@ router.post('/login', ({session, body: {email, password}}, res, err) => {
           })
         })
       } else {
-        res.render('login')
+        res.json('login')
       }
     })
     .then((matches) => {
       if (matches) {
         session.email = email
-        res.redirect('/')
+        res.json('/')
       } else {
-        res.render('login')
+        res.json('login')
       }
     })
     .catch(err)
