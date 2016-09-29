@@ -7,8 +7,9 @@ const { json } = require('body-parser')
 const router = Router()
 
 router.get('/profile', (req, res) => {
+  console.log(req.param('_id'))
   User
-    .find()
+    .find({ _id: req.param('_id') })
     .then(user => res.json(user))
 })
 
