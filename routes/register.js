@@ -14,7 +14,7 @@ router.post('/register', ({body: {email, password}}, res, err) => {
   User.findOne({email})
     .then((user) => {
       if (user) {
-        res.render('register')
+        res.json('register')
       } else {
         return new Promise((resolve, reject) => {
           bcrypt.hash(password, 13, (err, hash) => {
