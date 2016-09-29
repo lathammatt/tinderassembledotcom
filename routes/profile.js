@@ -18,7 +18,6 @@ router.patch('/profile', (req, res, err) => {
   User
     .update({_id: postID}, body)
     .then(user => res.json(user))
-
 })
 
 module.exports = router

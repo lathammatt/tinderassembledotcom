@@ -1,42 +1,44 @@
-<h2>Profile Page</h2>
-
-<form ng-submit="editProfile(profile)">
-	<div class="form-group">
-		<label for="username">User Name</label>
-		<input type="text" class="form-control" ng-model="profile.username" placeholder="i.e. Superman" />
+<div class='profileBackImg'>
+	<div class='profileFormWrapper col-sm-8 col-sm-offset-2'>
+		<h2 class='profileHeader'>Profile Page</h2>
+		<form ng-submit="editProfile(profile)">
+			<div class="form-group">
+				<label for="username">User Name</label>
+				<input type="text" class="form-control" ng-model="profile.username" placeholder="i.e. Superman" />
+			</div>
+			<div class="form-group">
+				<label for="gender">Gender</label>
+				<input type="text" class="form-control" ng-model="profile.gender" placeholder="male" />
+			</div>
+			<div class="form-group">
+				<label for="birthday">Birthday</label>
+				<input type="text" class="form-control" ng-model="profile.birthday" placeholder="6/6/1966" />
+			</div>
+			<div class="form-group">
+				<label for="orientation">Orientation</label>
+				<input type="text" class="form-control" ng-model="profile.orientation" placeholder="i.e. villain" />
+			</div>
+			<div class="form-group">
+				<label for="universe">Universe</label>
+				<input type="text" class="form-control" ng-model="profile.universe" placeholder="i.e. Marvel, DC, Image" />
+			</div>
+			<div class="form-group">
+				<label for="height">height (in inches)</label>
+				<input type="text" class="form-control" ng-model="profile.height" placeholder="i.e. 276" />
+			</div>
+			<div class="form-group">
+				<label for="weight">weight (in pounds)</label>
+				<input type="text" class="form-control" ng-model="profile.weight" placeholder="i.e. 8000" />
+			</div>
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" ng-model="profile.name" placeholder="i.e. Clark Kent" />
+			</div>
+			<div class="form-group">
+				<label for="tagline">Tagline</label>
+				<input type="text" class="form-control" ng-model="profile.tagline" placeholder="i.e. Let's fly around the world together" />
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
 	</div>
-	<div class="form-group">
-		<label for="gender">Gender</label>
-		<input type="text" class="form-control" ng-model="profile.gender" placeholder="male" />
-	</div>
-	<div class="form-group">
-		<label for="birthday">Birthday</label>
-		<input type="text" class="form-control" ng-model="profile.birthday" placeholder="6/6/1966" />
-	</div>
-	<div class="form-group">
-		<label for="orientation">Orientation</label>
-		<input type="text" class="form-control" ng-model="profile.orientation" placeholder="i.e. villain" />
-	</div>
-	<div class="form-group">
-		<label for="universe">Universe</label>
-		<input type="text" class="form-control" ng-model="profile.universe" placeholder="i.e. Marvel, DC, Image" />
-	</div>
-	<div class="form-group">
-		<label for="height">height (in inches)</label>
-		<input type="text" class="form-control" ng-model="profile.height" placeholder="i.e. 276" />
-	</div>
-	<div class="form-group">
-		<label for="weight">weight (in pounds)</label>
-		<input type="text" class="form-control" ng-model="profile.weight" placeholder="i.e. 8000" />
-	</div>
-	<div class="form-group">
-		<label for="name">Name</label>
-		<input type="text" class="form-control" ng-model="profile.name" placeholder="i.e. Clark Kent" />
-	</div>
-	<div class="form-group">
-		<label for="tagline">Tagline</label>
-		<input type="text" class="form-control" ng-model="profile.tagline" placeholder="i.e. Let's fly around the world together" />
-	</div>
-
-	<button type="submit" class="btn btn-default">Submit</button>
-</form>
+</div>
