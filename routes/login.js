@@ -8,8 +8,8 @@ router.get('/login', (req, res) => {
   res.send('login')
 })
 
-router.post('/login', ({ body: {username, password } }, res, err) => {
-	User.findOne({ username })
+router.post('/login', ({ body: {email, password } }, res, err) => {
+	User.findOne({ email })
 		.then(user => {
 			if (user && password === user.password) {
 				res.json('/')
