@@ -1,0 +1,16 @@
+.navBar {
+  background-color: #B40000; }
+  .navBar #navBrand {
+    color: white; }
+
+#navUl .navText {
+  color: white; }
+
+.profileBackImg {
+  background-image: url("marvel-vs-dc.jpg"); }
+  .profileBackImg .profileHeader {
+    text-align: center; }
+  .profileBackImg .profileFormWrapper {
+    margin-bottom: 30px; }
+
+/*# sourceMappingURL=output.css.map */
