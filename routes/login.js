@@ -10,10 +10,14 @@ router.get('/login', (req, res) => {
   res.send('login')
 })
 
+
+
 router.post('/login', ({session, body: {email, password}}, res, err) => {
+  var userID = ''
   User.findOne({email})
     .then(user => {
       if (user) {
+        userID = user._id
         return new Promise((resolve, reject)=> {
           bcrypt.compare(password, user.password, (err, matches) => {
             if (err){
@@ -31,7 +35,7 @@ router.post('/login', ({session, body: {email, password}}, res, err) => {
     .then((matches) => {
       if (matches) {
         session.email = email
-        res.json({ email })
+        res.json({ email, userID})
       } else {
         console.log("Password didn't match")
         res.json('login')
