@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-# tinderassembledotcom
-Where superheroes find love
 
-group project with dave, chris, zakk, alex, jamey
-for practicing frontend/backend cooperation
 
 
 *workspace/nodeclass/forked/tinderassembledotcom*
-=======
+
 # TINDERASSEMBLEDOTCOM - NSS Group Project
 Where superheroes find love. This is a MEAN stack app where the user (presumably super heroes) registers, logs in, edits their profile and then search other profiles for desirable matches.
 
@@ -27,5 +22,3 @@ Zachary George, Dave Harms, Chris Hill, Alex Horton, Matt Latham, and Jamie McAu
 
 ## Deployment
 The Node.js server is deployed to Heroku at [tinderassemble.herokuapp.com](https://tinderassemble.herokuapp.com/profile); Redis is also maintained through Heroku as well.. The MongoDB is hosted at [Mlab](https://mlab.com/).
-
->>>>>>> edfa084a4d833aa82cd7b4a2862ab15aa5ea165c
