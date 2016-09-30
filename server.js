@@ -1,10 +1,10 @@
 'use strict'
+// using node v6
 
 const { json } = require('body-parser')
 const express = require('express')
 const session = require('express-session')
 var RedisStore = require('connect-redis')(session)
-const mongoose = require('mongoose')
 const { connect } = require('./db/database')
 const routes = require('./routes/index')
 
