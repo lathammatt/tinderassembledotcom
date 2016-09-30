@@ -11,6 +11,7 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register', ({body: {email, password}}, res, err) => {
+  console.log('register')
   User.findOne({email})
     .then((user) => {
       if (user) {
@@ -28,7 +29,7 @@ router.post('/register', ({body: {email, password}}, res, err) => {
       }
     })
     .then((hash) => User.create({email, password: hash}))
-    .then(() => res.json('/login'))
+    .then((data) => res.json(data))
     .catch(err)
 })
 

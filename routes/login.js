@@ -13,6 +13,7 @@ router.get('/login', (req, res) => {
 
 
 router.post('/login', ({session, body: {email, password}}, res, err) => {
+  console.log('login route /route')
   var userID = ''
   User.findOne({email})
     .then(user => {
@@ -35,6 +36,9 @@ router.post('/login', ({session, body: {email, password}}, res, err) => {
     .then((matches) => {
       if (matches) {
         session.email = email
+        console.log('email', email)
+        console.log('userID', userID)
+        console.log('session.email', session.email)
         res.json({ email, userID})
       } else {
         console.log("Password didn't match")

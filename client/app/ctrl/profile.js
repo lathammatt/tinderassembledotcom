@@ -7,7 +7,7 @@ app.controller('ProfileCtrl', function($scope, $http, $routeParams) {
 
   $http({
       method: 'GET',
-      url: '/profile',
+      url: '/api/profile',
       params: { userID}
     })
     .then((res) => {
@@ -20,7 +20,7 @@ app.controller('ProfileCtrl', function($scope, $http, $routeParams) {
 
     $http({
       method: 'PATCH',
-      url: '/profile',
+      url: '/api/profile',
       data: profile
     })
     .then(res => {

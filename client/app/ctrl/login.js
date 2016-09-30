@@ -11,7 +11,7 @@ app.controller('LoginCtrl', function($scope, $http, $location) {
     }
 
     $http
-      .post('/login', newLogin)
+      .post('/api/login', newLogin)
       .then(res => {
         console.log(res)
         $location.path(`/profile/${res.data.userID}`)
