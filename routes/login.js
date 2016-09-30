@@ -24,14 +24,16 @@ router.post('/login', ({session, body: {email, password}}, res, err) => {
           })
         })
       } else {
+        console.log('Email not found')
         res.json('login')
       }
     })
     .then((matches) => {
       if (matches) {
         session.email = email
-        res.json('/')
+        res.json({ email })
       } else {
+        console.log("Password didn't match")
         res.json('login')
       }
     })
