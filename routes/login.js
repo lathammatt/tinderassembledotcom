@@ -34,7 +34,7 @@ router.post('/login', ({session, body: {email, password}}, res, err) => {
         res.json({ email })
       } else {
         console.log("Password didn't match")
-        res.send('login')
+        res.json('login')
       }
     })
     .catch(err)

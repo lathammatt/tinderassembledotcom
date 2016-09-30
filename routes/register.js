@@ -28,7 +28,7 @@ router.post('/register', ({body: {email, password}}, res, err) => {
       }
     })
     .then((hash) => User.create({email, password: hash}))
-    .then(() => res.redirect('/login'))
+    .then(() => res.json('/login'))
     .catch(err)
 })
 
