@@ -1,5 +1,5 @@
 'use strict'
-
+// comment
 const {connect, disconnect} = require('./database')
 
 const user = require('../models/user')
