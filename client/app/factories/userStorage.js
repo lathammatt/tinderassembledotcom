@@ -1,8 +1,7 @@
 'use strict'
 
-app.factory('userStorage', function($q) {
-	let user = ''
-	let id = ''
+app.factory('userStorage', function() {
+	let user, id
 
 	let setUser = data => user = data
 
