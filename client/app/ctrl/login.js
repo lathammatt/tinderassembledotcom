@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('LoginCtrl', function($scope, $http, $location) {
+app.controller('LoginCtrl', function($scope, $http, $location, userStorage) {
   $scope.test = 'login'
 
   $scope.loginUser = () => {
@@ -11,10 +11,11 @@ app.controller('LoginCtrl', function($scope, $http, $location) {
     }
 
     $http
-      .post('/login', newLogin)
-      .then(res => {
-        console.log(res)
-        $location.path(`/profile/${res.data.userID}`)
+      .post('/api/login', newLogin)
+      .then(({data: {email, userID}}) => {
+        userStorage.setUser(email)
+        userStorage.setID(userID)
+        $location.path('/profile')
       })
       .catch(console.error)
   }

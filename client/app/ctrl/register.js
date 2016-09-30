@@ -11,7 +11,7 @@ app.controller('RegisterCtrl', function($scope, $http, $location) {
     console.log(newUser)
 
     $http
-      .post('/register', newUser)
+      .post('/api/register', newUser)
       .then(res => {
         console.log(res)
         $location.path('/login')
