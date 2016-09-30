@@ -38,7 +38,15 @@ app.use(express.static('client'))
 app.use(json())
 
 //routes
-app.use(routes)
+app.use('/api', routes)
+
+app.use('/api', (req, res) =>
+  res.status(404).send({ code: 404, status: 'Not Found' })
+)
+
+app.use((req, res) =>
+  res.sendFile(process.cwd() + '/client/index.html')
+)
 
 connect()
   .then(() => {
