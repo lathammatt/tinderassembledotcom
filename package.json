@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Where superheroes find love",
   "main": "server.js",
+  "engines": {
+    "node": 6
+  },
   "scripts": {
     "postinstall": "bower install",
     "start": "node server.js"
