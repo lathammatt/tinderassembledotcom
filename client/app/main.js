@@ -1,6 +1,6 @@
 'use strict';
 
-const app = angular.module('tinderAssemble', ['ngRoute'])
+const app = angular.module('tinderAssemble', ['ngRoute', 'ngStorage'])
 
 console.log('hello main.js')
 
