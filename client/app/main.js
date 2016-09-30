@@ -16,7 +16,7 @@ app.config(function($routeProvider, $locationProvider) {
       templateUrl: './partials/register.html',
       controller: 'RegisterCtrl'
     })
-    .when('/profile', {
+    .when('/profile/:id', {
       templateUrl: './partials/profile.html',
       controller: 'ProfileCtrl'
     })

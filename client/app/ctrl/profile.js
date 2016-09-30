@@ -1,12 +1,14 @@
 'use strict';
 
-app.controller('ProfileCtrl', function($scope, $http) {
+app.controller('ProfileCtrl', function($scope, $http, $routeParams) {
   $scope.test = 'Profile'
+
+  var userID = $routeParams.id
 
   $http({
       method: 'GET',
       url: '/profile',
-      params: { _id: "57ed40856bb03cd8922bdd57" }
+      params: { userID}
     })
     .then((res) => {
       $scope.profile = res.data[0]
@@ -28,3 +30,4 @@ app.controller('ProfileCtrl', function($scope, $http) {
   }
 
 })
+
