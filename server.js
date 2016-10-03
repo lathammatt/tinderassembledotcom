@@ -3,6 +3,7 @@
 
 const { json } = require('body-parser')
 const express = require('express')
+const passport = require('passport')
 const session = require('express-session')
 var RedisStore = require('connect-redis')(session)
 const { connect } = require('./db/database')
@@ -27,7 +28,14 @@ app.use(session({
   secret: "secretuserkey"
 }))
 
+//begin-passport
+require('./strategies/local.js')
+app.use(passport.initialize())
+app.use(passport.session())
+//end-passport
+
 app.use((req, res, next) => {
+  console.log('session', session)
   app.locals.email = req.session.email
   next()
 })

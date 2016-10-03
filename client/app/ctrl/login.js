@@ -4,7 +4,6 @@ app.controller('LoginCtrl', function($scope, $http, $location, $localStorage) {
   $scope.test = 'login'
 
   $scope.loginUser = () => {
-    console.log($scope.email, $scope.password)
     const newLogin = {
       email: $scope.email,
       password: $scope.password
@@ -12,9 +11,9 @@ app.controller('LoginCtrl', function($scope, $http, $location, $localStorage) {
 
     $http
       .post('/api/login', newLogin)
-      .then(({data: {email, userID}}) => {
+      .then(({data: {user: {email, _id}}}) => {
         $localStorage.email = email
-        $localStorage.userID = userID
+        $localStorage.userID = _id
         $location.path('/profile')
       })
       .catch(console.error)
