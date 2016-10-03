@@ -15,7 +15,6 @@ passport.use(new Strategy({
     function(user, pass, done) {
         User.findOne({ email: user }, (err, email) => {
             if (err) {
-                console.log('error ********')
                 return done(err)
             }
             if (!email) return done(null, false)
