@@ -1,11 +1,8 @@
 'use strict'
 
-const User = require('../models/user')
-const bcrypt = require('bcrypt')
-const passport = require('passport')
 
-module.exports.loginPost = passport.authenticate('local', { successRedirect: '/profile',
-                                                            failureRedirect: '/login' })
+
+module.exports.loginPost = 
 
 
 // module.exports.loginPost = ({session, body: {email, password}}, res, err) => {

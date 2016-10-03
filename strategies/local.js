@@ -5,7 +5,7 @@ const { Strategy } = require('passport-local')
 const { compare } = require('bcrypt')
 const User = require('../models/user')
 
-passport.serializeUser((user, done) => (null, user.id))
+passport.serializeUser((user, done) => done(null, user.id))
 passport.deserializeUser((_id, done) => User.findOne({ _id }, done))
 
 passport.use(new Strategy({
@@ -20,9 +20,6 @@ passport.use(new Strategy({
             }
             if (!email) return done(null, false)
             compare(pass, email.password, (err, matches) => {
-                console.log('pass', pass)
-                console.log('email.password', email.password)
-                console.log('matches', matches)
                 if (err) {
                     console.log('this is the error inside the compare *********')    
                     return done(err)
